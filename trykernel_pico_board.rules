@@ -1,0 +1,155 @@
+
+(rules PCB trykernel_pico_board.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute off)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 4.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clearance 200.0)
+    (clearance 125.0 (type smd_to_turn_gap))
+    (clearance 50.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+    (clearance 200.0 (type +BATT,Default))
+    (clearance 200.0 (type 3.3V,Default))
+    (clearance 200.0 (type 5V,Default))
+    (clearance 200.0 (type GND,Default))
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um-kicad_default" "Via[0-1]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:300_um-+BATT,Default" "Via[0-1]_600:300_um" +BATT,Default
+  )
+  (via 
+    "Via[0-1]_600:300_um-3.3V,Default" "Via[0-1]_600:300_um" 3.3V,Default
+  )
+  (via 
+    "Via[0-1]_600:300_um-5V,Default" "Via[0-1]_600:300_um" 5V,Default
+  )
+  (via 
+    "Via[0-1]_600:300_um-GND,Default" "Via[0-1]_600:300_um" GND,Default
+  )
+  (via_rule
+    default "Via[0-1]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:300_um-kicad_default"
+  )
+  (via_rule
+    +BATT,Default "Via[0-1]_600:300_um-+BATT,Default"
+  )
+  (via_rule
+    3.3V,Default "Via[0-1]_600:300_um-3.3V,Default"
+  )
+  (via_rule
+    5V,Default "Via[0-1]_600:300_um-5V,Default"
+  )
+  (via_rule
+    GND,Default "Via[0-1]_600:300_um-GND,Default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(A1-GP9{slash}I2C0_SCL)" "Net-(A1-GP4{slash}UATR1_TX)" "Net-(A1-GP17{slash}SPI0_CS)" "Net-(A1-GP16_SPI0_RX)" "Net-(A1-GP18{slash}SPI0_SCK)" "Net-(A1-GP7{slash}I2C1_SCL)" "Net-(A1-GP21)" "Net-(A1-3V3_EN)"
+    "Net-(A1-GP8{slash}I2C0_SDA)" "Net-(A1-VSYS)" "Net-(A1-GP27)" "Net-(A1-GP10{slash}SPI1_SCK)" "Net-(A1-GP15)" "Net-(A1-GP11{slash}SPI1_TX)" "Net-(A1-GP28)" "Net-(A1-GP6{slash}I2C1_SDA)"
+    "Net-(A1-GP1{slash}UART0_RX)" "Net-(A1-GP0{slash}UART0_TX)" "Net-(A1-GP2)" "Net-(A1-GP14)" "Net-(A1-ADC_VREF)" "Net-(A1-GP20)" "Net-(A1-RUN)" "Net-(A1-GP5{slash}UART1_RX)"
+    "Net-(A1-GP3)" "Net-(A1-GP19{slash}SPI0_TX)" "Net-(A1-GP13{slash}SPI1_CS)" "Net-(A1-GP12{slash}SPI1_RX)" "Net-(A1-GP22)" "Net-(A1-GP26)" "Net-(D1-K)" "Net-(J2-Pin_2)"
+    "Net-(J4-Pin_2)" "Net-(J4-Pin_3)" "Net-(J1-Pin_2)" "Net-(J1-Pin_1)" "Net-(J2-Pin_3)" "Net-(J3-Pin_2)" "Net-(J3-Pin_3)" "Net-(J5-Pin_2)"
+    "Net-(J5-Pin_3)" "Net-(J6-CLK)" "unconnected-(J6-DAT2-Pad1)" "Net-(J6-CMD)" "unconnected-(J6-DET_A-Pad10)" "unconnected-(J6-DAT1-Pad8)" "Net-(J6-DAT3{slash}CD)" "unconnected-(J6-DET_B-Pad9)"
+    "Net-(J6-DAT0)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +BATT,Default
+    +BATT
+    (clearance_class +BATT,Default)
+    (via_rule +BATT,Default)
+    (rule
+      (width 750.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 3.3V,Default
+    +3.3V
+    (clearance_class 3.3V,Default)
+    (via_rule 3.3V,Default)
+    (rule
+      (width 750.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class 5V,Default
+    +5V
+    (clearance_class 5V,Default)
+    (via_rule 5V,Default)
+    (rule
+      (width 750.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class GND,Default
+    GND
+    (clearance_class GND,Default)
+    (via_rule GND,Default)
+    (rule
+      (width 750.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

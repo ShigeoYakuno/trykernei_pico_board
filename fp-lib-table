@@ -1,5 +1,7 @@
 (fp_lib_table
   (version 7)
   (lib (name "RPI_Hat")(type "KiCad")(uri "${KIPRJMOD}/libraries/RPi_Hat_Template/footprints/RPI_Hat.pretty")(options "")(descr ""))
-  (lib (name "pico_template")(type "KiCad")(uri "${KIPRJMOD}/libraries/pico_template/pico_template.pretty")(options "")(descr ""))
+  (lib (name "pico")(type "KiCad")(uri "${KIPRJMOD}/libraries/pico/pico.pretty")(options "")(descr ""))
+  (lib (name "S1MFL")(type "KiCad")(uri "${KIPRJMOD}/libraries/S1MFL/S1MFL.pretty")(options "")(descr ""))
+  (lib (name "Raspberry-Pi-4")(type "KiCad")(uri "${KIPRJMOD}/libraries/rpi4/Raspberry-Pi-4.pretty")(options "")(descr ""))
 )
